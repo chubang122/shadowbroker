@@ -7,17 +7,20 @@ from fuzzbunch import env
 
 """
 Set up core paths ok
+配置核心路径
 
 """
 (FB_FILE, FB_DIR, EDFLIB_DIR) = env.setup_core_paths( os.path.realpath(__file__))
 
 """ 
 Make sure our libraries are setup properly 
+确认库配置正确
 """
 #env.setup_lib_paths(os.path.abspath(__file__), EDFLIB_DIR)
 
 """
 Plugin directories
+定义拼接插件目录
 """
 PAYLOAD_DIR = os.path.join(FB_DIR, "payloads")
 EXPLOIT_DIR = os.path.join(FB_DIR, "exploits")
@@ -49,7 +52,7 @@ def do_interactive(fb):
     fb.io.print_warning("Dropping to Interactive Python Interpreter")
     fb.io.print_warning("Press Ctrl-D to exit")
     code.interact(local=gvars, banner="")
-
+#主函数
 def main(fb):
     #fb.printbanner()
     fb.cmdqueue.append("retarget")
@@ -61,6 +64,7 @@ def main(fb):
         else:
             break
 
+#加载插件
 def load_plugins(fb):
     fb.io.pre_input(None)
     fb.io.print_msg("Loading Plugins")
@@ -82,6 +86,6 @@ def setup_and_run(config, fbdir, logdir):
     fb.printbanner()
     load_plugins(fb)
     main(fb)
-
+#确认当前运行文件
 if __name__ == "__main__":
     setup_and_run(FB_CONFIG, FB_DIR, LOG_DIR)
