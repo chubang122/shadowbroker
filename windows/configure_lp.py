@@ -6,7 +6,7 @@ import sys
 import time
 import random
 
-# determine the absolute path to the disk
+#  determine the absolute path to the disk
 scriptDir = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 if (re.search("\s", scriptDir)):
