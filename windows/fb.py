@@ -6,7 +6,7 @@ import sys
 from fuzzbunch import env
 
 """
-Set up core paths
+Set up core paths ok
 
 """
 (FB_FILE, FB_DIR, EDFLIB_DIR) = env.setup_core_paths( os.path.realpath(__file__))
